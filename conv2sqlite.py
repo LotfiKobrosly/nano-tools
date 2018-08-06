@@ -43,7 +43,8 @@ OSX: /Users/<user>/Library/RaiBlocks/
 Linux: /root/RaiBlocksTest/
 """
 if sys.platform == 'linux':
-    RAIBLOCKS_LMDB_DB = os.path.join(os.environ['~'], DATADIR, DBPREFIX)
+    # RAIBLOCKS_LMDB_DB = os.path.join(os.environ['HOME'], DATADIR, DBPREFIX)
+    RAIBLOCKS_LMDB_DB = os.path.join('/root/', DATADIR, DBPREFIX)
 elif sys.platform == 'win32':
     # XXX untested
     RAIBLOCKS_LMDB_DB = os.path.join(os.environ['USERPROFILE'], 'AppData', 'Local', DATADIR, DBPREFIX)
