@@ -159,7 +159,7 @@ value (min, max, median):  241 273 257.0
 """
 
 
-DATADIR = 'RaiBlocks'
+DATADIR = 'RaiBlocksTest'
 DBPREFIX = 'data.ldb'
 
 SUBDBS = ['accounts', 'blocks_info', 'change', 'checksum', 'frontiers', 'meta', 'open', 'pending', 'receive', 'representation', 'send', 'unchecked', 'unsynced', 'vote']
