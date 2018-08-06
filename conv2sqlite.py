@@ -34,16 +34,16 @@ from rainumbers import hex2bin, bin2hex, bin2balance_mxrb, bin2balance_raw, enco
 from nanodb import KNOWN_ACCOUNTS, GENESIS_OPEN_BLOCK_HASH, GENESIS_ACCOUNT, GENESIS_PUBLIC_KEY, GENESIS_BALANCE_XRB, GENESIS_BALANCE_RAW
 from toposort import topological_sort, generate_block_dependencies
 
-DATADIR = 'RaiBlocks'
+DATADIR = 'RaiBlocksTest'
 DBPREFIX = 'data.ldb'
 
 r"""
 Windows: C:\Users\<user>\AppData\Local\RaiBlocks\
 OSX: /Users/<user>/Library/RaiBlocks/
-Linux: /home/<user>/RaiBlocks/
+Linux: /root/RaiBlocksTest/
 """
 if sys.platform == 'linux':
-    RAIBLOCKS_LMDB_DB = os.path.join(os.environ['HOME'], DATADIR, DBPREFIX)
+    RAIBLOCKS_LMDB_DB = os.path.join(os.environ['ROOT'], DATADIR, DBPREFIX)
 elif sys.platform == 'win32':
     # XXX untested
     RAIBLOCKS_LMDB_DB = os.path.join(os.environ['USERPROFILE'], 'AppData', 'Local', DATADIR, DBPREFIX)
