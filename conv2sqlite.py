@@ -24,8 +24,7 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-export LC_ALL=C.UTF-8
-export LANG=C.UTF-8
+
 import sys, collections, os
 from struct import unpack
 import click
@@ -42,11 +41,10 @@ DBPREFIX = 'data.ldb'
 r"""
 Windows: C:\Users\<user>\AppData\Local\RaiBlocks\
 OSX: /Users/<user>/Library/RaiBlocks/
-Linux: /root/RaiBlocksTest/
+Linux: /home/<users>/RaiBlocksTest/
 """
 if sys.platform == 'linux':
-    # RAIBLOCKS_LMDB_DB = os.path.join(os.environ['HOME'], DATADIR, DBPREFIX)
-    RAIBLOCKS_LMDB_DB = os.path.join('/root/', DATADIR, DBPREFIX)
+    RAIBLOCKS_LMDB_DB = os.path.join(os.environ['HOME'], DATADIR, DBPREFIX)
 elif sys.platform == 'win32':
     # XXX untested
     RAIBLOCKS_LMDB_DB = os.path.join(os.environ['USERPROFILE'], 'AppData', 'Local', DATADIR, DBPREFIX)
